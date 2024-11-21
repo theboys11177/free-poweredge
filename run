@@ -19,8 +19,6 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
 fi
 
-cd ~
-
 cat <<EOF > Dockerfile
 FROM ubuntu:22.04
 
@@ -36,7 +34,9 @@ RUN printf "systemctl start systemd-logind" >> /etc/profile
 ENTRYPOINT ["/sbin/init"]
 EOF
 
-docker build -t utmp .
+echo Installing PowerEdge
+docker build -t utmp . > /dev/null 2>&1
+echo Done installing PowerEdge
 
 echo To make your PowerEdge. Please run
 echo "
