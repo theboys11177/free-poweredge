@@ -23,10 +23,14 @@
 2. **Run the setup script:**  
    ```bash
    bash run
-   ```  
+   ```
+   Or if you want the 16TB RAM
+   ```bash
+   bash run2
+   ```
    ![Step 2: Run bash run](https://github.com/user-attachments/assets/c5488afc-edf0-4478-b4aa-50664ace2878)  
 
-3. **Finalize the setup:**  
+4. **Finalize the setup:**  
    ```bash
    bash make
    ```  
