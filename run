@@ -6,12 +6,20 @@ echo "
  ██ ██      ██      ███████ ███████       ██   ██ ██      ██ ██████  ██  
                                                                          
 "
-echo Free PowerEdge Server AMD
+echo Free PowerEdge Server AMD 768G
 echo - 768GB RAM
 echo - 128core AMD EPYC 7763
 echo Pterodactyl Supported Vps | 24/7 
 
+read -p "Are you sure you want to proceed? (y/n): " -n 1 -r
+echo
 
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Installation aborted."
+    exit 1
+fi
+
+cd ~
 
 cat <<EOF > Dockerfile
 FROM ubuntu:22.04
@@ -29,3 +37,13 @@ ENTRYPOINT ["/sbin/init"]
 EOF
 
 docker build -t utmp .
+
+echo To make your PowerEdge. Please run
+echo "
+██████   █████  ███████ ██   ██     ███    ███  █████  ██   ██ ███████ 
+██   ██ ██   ██ ██      ██   ██     ████  ████ ██   ██ ██  ██  ██      
+██████  ███████ ███████ ███████     ██ ████ ██ ███████ █████   █████   
+██   ██ ██   ██      ██ ██   ██     ██  ██  ██ ██   ██ ██  ██  ██      
+██████  ██   ██ ███████ ██   ██     ██      ██ ██   ██ ██   ██ ███████                                    
+"
+echo You can create as many poweredges as you want, Just press the plus icon and run the command again!
