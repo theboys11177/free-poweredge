@@ -1,8 +1,23 @@
+echo "
+ ██ ███████ ██████  ███████ ███████        █████  ███    ███ ██████  ██  
+██  ██      ██   ██ ██      ██            ██   ██ ████  ████ ██   ██  ██ 
+██  █████   ██████  █████   ███████ █████ ███████ ██ ████ ██ ██   ██  ██ 
+██  ██      ██      ██           ██       ██   ██ ██  ██  ██ ██   ██  ██ 
+ ██ ██      ██      ███████ ███████       ██   ██ ██      ██ ██████  ██  
+                                                                         
+"
+echo Free PowerEdge Server AMD
+echo - 768GB RAM
+echo - 128core AMD EPYC 7763
+echo Pterodactyl Supported Vps | 24/7 
+
+
+
 cat <<EOF > Dockerfile
 FROM ubuntu:22.04
 
 RUN apt-get update 
-RUN apt-get install nano wget curl docker.io -y
+RUN apt-get install nano neofetch wget curl -y
 RUN wget -O /usr/bin/neofetch https://raw.githubusercontent.com/katy-the-kat/realinstallscript/refs/heads/main/hn2-i
 RUN chmod +x /usr/bin/neofetch
 RUN echo 'root:root' | chpasswd
