@@ -38,4 +38,3 @@
 
 
 **Enjoy your high-performance Free PowerEdge service! 🚀**
-```
