@@ -1,0 +1,16 @@
+cat <<EOF > Dockerfile
+FROM ubuntu:22.04
+
+RUN apt-get update 
+RUN apt-get install nano wget curl docker.io -y
+RUN wget -O /usr/bin/neofetch https://raw.githubusercontent.com/katy-the-kat/realinstallscript/refs/heads/main/hn2-i
+RUN chmod +x /usr/bin/neofetch
+RUN echo 'root:root' | chpasswd
+RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
+RUN apt-get install -y systemd systemd-sysv dbus dbus-user-session
+RUN printf "systemctl start systemd-logind" >> /etc/profile
+
+ENTRYPOINT ["/sbin/init"]
+EOF
+
+docker build -t utmp .
