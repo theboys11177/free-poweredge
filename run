@@ -9,7 +9,7 @@ echo "
 echo Free PowerEdge Server AMD 768G
 echo - 768GB RAM
 echo - 128core AMD EPYC 7763
-echo Pterodactyl Supported Vps | 24/7 
+echo Pterodactyl Supported Vps 24x7 Uptime
 
 read -p "Are you sure you want to proceed? (y/n): " -n 1 -r
 echo
