@@ -30,7 +30,8 @@
    ```bash
    bash make
    ```  
-   ![Step 3: Run bash make](https://github.com/user-attachments/assets/c5488afc-edf0-4478-b4aa-50664ace2878)
+   ![Step 3: Run bash make](https://github.com/user-attachments/assets/38127672-c874-45cc-a109-fbf0789d9685)
+
 
 **Enjoy your high-performance Free PowerEdge service! 🚀**
 ```
