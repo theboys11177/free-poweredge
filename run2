@@ -6,10 +6,10 @@ echo "
  ██ ██      ██      ███████ ███████       ██   ██ ██      ██ ██████  ██  
                                                                          
 "
-echo Free PowerEdge Server AMD 16TB
+echo Free PowerEdge Server Intel 16TB
 echo - 16TB RAM
 echo - 120core Intel Xeon
-echo Pterodactyl Supported Vps | 24/7 
+echo Pterodactyl Supported Vps 24x7 Uptime
 
 read -p "Are you sure you want to proceed? (y/n): " -n 1 -r
 echo
