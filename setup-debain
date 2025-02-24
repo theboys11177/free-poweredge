@@ -1,0 +1,38 @@
+echo "Sets up a Debian 12 (Bookworm) container (without root password)"
+
+read -p "Are you sure you want to proceed? (y/n): " -n 1 -r
+echo
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "Installation aborted."
+    exit 1
+fi
+
+cat <<EOF > Dockerfile
+FROM debian:12
+
+RUN apt-get update
+RUN apt-get install -y nano neofetch curl  # Install packages
+
+# Install systemd and related packages (if truly needed)
+# RUN apt-get install -y systemd systemd-sysv dbus dbus-user-session
+# RUN printf "systemctl start systemd-logind" >> /etc/profile
+
+# If you REALLY need to set a password (use Docker secrets instead if possible)
+# ARG ROOT_PASSWORD
+# RUN echo "root:root" | chpasswd  # Use a strong password hash
+
+ENTRYPOINT ["/bin/bash"] # Start a bash shell - much simpler than systemd for most cases
+# ENTRYPOINT ["/sbin/init"] # Only if you REALLY need systemd
+
+EOF
+
+echo "Building image..."
+docker build -t utmp-debian .
+
+echo "Running container..."
+docker run -it utmp-debian  # Removed --privileged and --cap-add=ALL
+
+echo "Container started. You are logged in as root."
+# If you set a password, remind the user:
+# echo "Remember: You can change the root password inside the container."
